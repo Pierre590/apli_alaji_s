@@ -3,8 +3,14 @@
 {% block title %}Tableau{% endblock %}
 
 {% block body %}
-
-
-
-
+    <div class="dropdown">
+        <div class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Candidats :
+        </div>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
+            {% for trainer in response %}
+                <a class="dropdown-item" href="./index.php?id={{trainer.id}}"><li>{{trainer.fullname}}</li></a>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

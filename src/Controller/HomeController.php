@@ -22,7 +22,7 @@ class HomeController extends AbstractController
 
 
 
-        return $this->render('base.html.twig', [
+        return $this->render('home/index.html.twig', [
             'response' => $response->toArray(),
         ]);
     }
