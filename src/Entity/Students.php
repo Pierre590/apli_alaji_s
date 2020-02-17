@@ -43,6 +43,11 @@ class Students
      */
     private $results;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $Moodle_id;
+
     public function __construct()
     {
         $this->results = new ArrayCollection();
@@ -128,6 +133,18 @@ class Students
                 $result->setStudents(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMoodleId(): ?int
+    {
+        return $this->Moodle_id;
+    }
+
+    public function setMoodleId(int $Moodle_id): self
+    {
+        $this->Moodle_id = $Moodle_id;
 
         return $this;
     }

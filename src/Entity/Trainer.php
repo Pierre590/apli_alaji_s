@@ -43,6 +43,11 @@ class Trainer
      */
     private $quizzes;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $Moodle_id;
+
     public function __construct()
     {
         $this->students = new ArrayCollection();
@@ -148,6 +153,18 @@ class Trainer
                 $quiz->setTrainer(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMoodleId(): ?int
+    {
+        return $this->Moodle_id;
+    }
+
+    public function setMoodleId(int $Moodle_id): self
+    {
+        $this->Moodle_id = $Moodle_id;
 
         return $this;
     }
